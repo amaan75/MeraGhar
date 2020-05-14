@@ -28,14 +28,20 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation(Deps.kotlin_reflect)
+	implementation(Deps.kotlin_stdlib)
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 }
+
+//implementation(Deps.actuator)
+//implementation(Deps.mongo)
+//implementation(Deps.web)
+//implementation(Deps.kotlin_jackson)
+//implementation(Deps.kotlin_reflect)
 
 tasks.withType<Test> {
 	useJUnitPlatform()
